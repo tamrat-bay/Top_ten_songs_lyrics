@@ -1,166 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Get_top10_hits</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-   <style>
-    body{margin: 0; 
-        padding: 0;
-        background-color: #232323;    
-    }
-    #container{
-        text-align: center;
-    }
-    #container h1{
-        border-radius: 20px;
-        margin: 0;
-        padding: 35px 0 35px 0;
-        color: #ffd485;
-        text-shadow: 2px 2px 3px #000000;
-        font-size: 45px;
-        letter-spacing: 15px;
-        font-family: cursive;
-    border-bottom: 2px solid white;
-    }
-    #container header{
-        background-color: #9b5b5b;
-        padding: 0 0 6px 0;
-    }
-    #container img{
-        display: block;
-        height: 340px;
-        margin: 28px auto;
-        letter-spacing: 13px;
-        box-sizing: border-box;
-        padding: 0 0 11px 0;
-        width: 30%;
-        box-shadow: 0px 0px 28px #040604;
-        border-radius: 50px;
-        border-bottom: 6px solid #ef2c2c;
-    }
-#container input{
-    height: 49px;
-    width: 24%;
-    text-align: center;
-    font-size: 19px;
-    display: block;
-    border: 3px solid #dddcd3;
-    border-radius: 7px;
-    box-shadow: 0 0 15px white;
-    margin: 13px auto;
-}
-#container button {
-    height: 65px;
-    cursor: pointer;
-    color: #7ed281;
-    box-shadow: 0 0 12px;
-    font-weight: 600;
-    width: 207px;
-    border: 1px green groove;
-    font-size: 32px;
-    text-shadow: 1px 2px black;
-    letter-spacing: 5px;
-    background-image: url(https://cssauthor.com/wp-content/uploads/2019/09/Large-Grungey-Wood-Texture.jpg);
-}
-#table td.songName{
-    background-color: rebeccapurple;
-}
-#table td.songName:hover{
-    background-color: rgb(64, 15, 112);
-}
-.table{
-    margin: 20px 0;
-}
-#listOfSongs{
-    min-height: 600px;
-}    
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <h1>TOP 10 HITS <i class="fas fa-music"></i></h1>
 
-@media screen and (max-width: 1300px) {
-    #container img{
-        display: block;
-        height: 340px;
-        margin: 28px auto;
-        letter-spacing: 13px;
-        box-sizing: border-box;
-        padding: 0 0 11px 0;
-        width: 40%;
-        box-shadow: 0px 0px 28px #040604;
-        border-radius: 50px;
-        border-bottom: 6px solid #ef2c2c;
-    }
-}
-@media screen and (max-width: 950px) {
-    #container img{
-        display: block;
-        height: 340px;
-        margin: 28px auto;
-        letter-spacing: 13px;
-        box-sizing: border-box;
-        padding: 0 0 11px 0;
-        width: 60%;
-        box-shadow: 0px 0px 28px #040604;
-        border-radius: 50px;
-        border-bottom: 6px solid #ef2c2c;
-    }
-}
-@media screen and (max-width: 650px) {
-    #container img{
-        display: block;
-        height: 340px;
-        margin: 28px auto;
-        letter-spacing: 13px;
-        box-sizing: border-box;
-        padding: 0 0 11px 0;
-        width: 80%;
-        box-shadow: 0px 0px 28px #040604;
-        border-radius: 50px;
-        border-bottom: 6px solid #ef2c2c;
-    }
-}
-    </style>
-</head>
-<body>
-
-  <div id="container">
-    <header>
-        <h1>TOP 10 HITS <i class="fas fa-music"></i> </h1>
+        <input type="text" name="" placeholder="Artists Name" id="Artist" />
+        <a href="#hitsList"><button type="button" onclick="loadDoc()">
+          Submit<i class="fab fa-creative-commons-sampling"></i>
+        </button> 
+       </a>
         
-        <input type="text" name="" placeholder="Artists Name" id="Artist">
-        <button type="button" onclick="loadDoc()">Submit<i class="fab fa-creative-commons-sampling"></i></button>
-        <img id="artistImg" src="https://cdn.pixabay.com/photo/2017/09/10/18/25/question-2736480__340.jpg" alt="">
-    </header>
-    <div id="hitsList">
+        <img
+          id="artistImg"
+          src="https://cdn.pixabay.com/photo/2017/09/10/18/25/question-2736480__340.jpg"
+          alt=""
+        />
+      </header>
+      <div id="hitsList">
         <h1>Songs List</h1>
         <div id="listOfSongs">
-            <table id="table" class="table table-hover table-dark">
-                <thead>
-                  <tr>
-                    <th scope="col">Song Name</th>
-                    <th scope="col">Lyrics</th>
-                  </tr>
-                </thead>
-                <tbody id="tbody">
-                
-                </tbody>
-              </table>
+          <div id="song">
+            <audio controls>
+              <source src="" type="audio/mp3" />
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+          <table id="table" class="table table-hover table-dark">
+            <thead>
+              <tr>
+                <th scope="col">Song Name</th>
+                <th scope="col">Lyrics</th>
+              </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
         </div>
+      </div>
     </div>
-   </div>
- 
+
     <script>
-          let lyricsObj,artist = document.getElementById('Artist'),artistImage = document.getElementById('artistImg');
-          
-   function loadDoc() {
+      let lyricsObj,
+        artist = document.getElementById("Artist"),
+        artistImage = document.getElementById("artistImg");
+
+      artist.onkeypress = e => {
+        if (e.keyCode === 13) {
+          loadDoc();
+        }
+      };
+
+      function loadDoc() {
         let lyrics = new XMLHttpRequest();
         lyrics.onreadystatechange = function() {
           if (this.readyState === 4 && this.status === 200) {
             lyricsObj = JSON.parse(this.responseText);
-            artistImage.src = lyricsObj.response.hits[0].result.primary_artist.image_url
-            document.getElementById('table').innerHTML =`
+            // artistImage.src =
+            //   lyricsObj.response.hits[0].result.primary_artist.image_url;
+            document.getElementById("table").innerHTML = `
              <table id="table" class="table table-hover table-dark">
                 <thead>
                   <tr>
@@ -170,21 +86,65 @@
                 </thead>
                 <tbody id="tbody">
                 </tbody>
-              </table>`
+              </table>`;
             lyricsObj.response.hits.forEach(e => {
-                document.getElementById('table').innerHTML +=`<tr>
+              document.getElementById("table").innerHTML += `<tr>
                     <td class="songName">${e.result.full_title}</td>
-                    <td class="table-info"><a href="${e.result.url}">Go To The Lyrics</a></td>
-                  </tr>`
-                //  `<h3>${e.result.full_title}</h3><p><a href="${e.result.url}">Go To The Lyrics</a></p>`
+                    <td class="infoLyrics"><a href="${e.result.url}" target="_blank">Go To The Lyrics</a></td>
+                  </tr>`;
             });
-          };        
+          }
         };
-        lyrics.open("GET", `https://genius.p.rapidapi.com/search?q=${artist.value}`);
+        lyrics.open(
+          "GET",
+          `https://genius.p.rapidapi.com/search?q=${artist.value}`
+        );
         lyrics.setRequestHeader("x-rapidapi-host", "genius.p.rapidapi.com");
-        lyrics.setRequestHeader("x-rapidapi-key", "4563e3ee97msh096d9896fd6c673p1704e3jsn9fb26859ac6f");
-        lyrics.send();    
-   }
+        lyrics.setRequestHeader(
+          "x-rapidapi-key",
+          "4563e3ee97msh096d9896fd6c673p1704e3jsn9fb26859ac6f"
+        );
+        lyrics.send();
+
+        var data = null;
+
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+
+        xhr.addEventListener("readystatechange", function() {
+          if (this.readyState === this.DONE) {
+            let songObj = JSON.parse(this.responseText).data;
+            console.log(songObj);
+            artistImage.src =songObj[1].artist. picture_medium;
+
+           
+            document.getElementById("song").innerHTML = `<h3>${songObj[1].title}</h3> <audio controls autoplay loop>
+                    <source src=${
+                      songObj[1].preview
+                    } type="audio/mp3">
+                    <source src=${
+                      songObj[2].preview
+                    } type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>`;
+          }
+        });
+
+        xhr.open(
+          "GET",
+          `https://deezerdevs-deezer.p.rapidapi.com/search?q=${artist.value}`
+        );
+        xhr.setRequestHeader(
+          "x-rapidapi-host",
+          "deezerdevs-deezer.p.rapidapi.com"
+        );
+        xhr.setRequestHeader(
+          "x-rapidapi-key",
+          "4563e3ee97msh096d9896fd6c673p1704e3jsn9fb26859ac6f"
+        );
+        xhr.send(data);
+      }
+
     </script>
-</body>
+  </body>
 </html>

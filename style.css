@@ -1,0 +1,162 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #ebedf3;
+}
+#container{
+    text-align: center;
+}
+#container h1{
+    /* border-radius: 0; */
+    margin: 0;
+    padding: 35px 0 35px 0;
+    color: #ffffff;
+    background-color: #00000029;
+    text-shadow: 2px 2px 3px #000000;
+    font-size: 3.2em;
+    letter-spacing: 15px;
+    font-family: cursive;
+    border-bottom: 3px solid rgba(245, 245, 245, 0.568);
+}
+#container header{
+    background: repeat;
+    /* background-color: #d1b794; */
+    padding: 0 0 6px 0;
+    background-image: url(https://images.unsplash.com/photo-1568663041326-6348c761f7af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1363&q=80);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    /* opacity: 0.8; */
+}
+#container img{
+    display: block;
+    height: 424px;
+    margin: 28px auto;
+    letter-spacing: 13px;
+    box-sizing: border-box;
+    padding: 0 0 11px 0;
+    width: 33%;
+    border: 9px solid #656565;
+    box-shadow: 5px 5px 7px #ffffff;
+    border-radius: 50px;
+    border-bottom: 6px solid #000000;
+    transform: skewX(10deg);
+}
+#container input{
+    height: 60px;
+    background: #b9aa9ee6;
+    width: 35%;
+    text-align: center;
+    font-size: 2.1em;
+    display: block;
+    border: 3px solid #000000;
+    border-radius: 7px;
+    box-shadow: 0 0 15px white;
+    margin: 13px auto;
+    outline: none;
+}
+#container button {
+    height: 65px;
+    cursor: pointer;
+    color: #ffffff;
+    box-shadow: 0 0 12px white;
+    font-weight: 600;
+    width: 250px;
+    border-radius: 10px;
+    border: 1px #ffffff groove;
+    font-size: 32px;
+    text-shadow: 1px 2px #877d7d;
+    background-color: #8d5252;
+    letter-spacing: 5px;
+    transition: all .3s;
+}
+#container button:hover {
+    background-color: #201414;
+    transform: scale(1.1);
+}
+
+#table td.songName{
+    background-color: #000000;
+    width: 80%;
+    /* color: white; */
+    box-sizing: border-box;
+}
+#table td.songName:hover{
+background-color: #757575;
+}
+.table{
+    width: 80%;
+    margin: 20px auto;
+    box-shadow: 0 0 10px black;
+}
+.infoLyrics{
+    background-color: #f3efef;}
+.infoLyrics:hover{
+    background-color: #777777;
+}
+.infoLyrics a{
+    text-decoration: none;
+    color: #000000;
+    cursor: pointer;
+}
+.table-dark {
+    color: #fff;
+    background-color: #48484873;
+    font-size: 1.2em;
+}
+#listOfSongs{
+min-height: 600px;
+}    
+audio{
+    margin: 2% 0 0 0;
+    width: 50%;
+    height: 80px;
+    border-radius: 50px;
+    outline: none;
+    box-shadow: 3px 4px 5px #000000a6;
+    border: 14px solid #67180b45;
+}
+
+
+@media screen and (max-width: 1300px) {
+#container img{
+    display: block;
+    height: 340px;
+    margin: 28px auto;
+    letter-spacing: 13px;
+    box-sizing: border-box;
+    padding: 0 0 11px 0;
+    width: 40%;
+    box-shadow: 0px 0px 28px #040604;
+    border-radius: 50px;
+    border-bottom: 6px solid #ef2c2c;
+}
+}
+@media screen and (max-width: 950px) {
+#container img{
+    display: block;
+    height: 340px;
+    margin: 28px auto;
+    letter-spacing: 13px;
+    box-sizing: border-box;
+    padding: 0 0 11px 0;
+    width: 60%;
+    box-shadow: 0px 0px 28px #040604;
+    border-radius: 50px;
+    border-bottom: 6px solid #ef2c2c;
+}
+}
+@media screen and (max-width: 650px) {
+#container img{
+    display: block;
+    height: 340px;
+    margin: 28px auto;
+    letter-spacing: 13px;
+    box-sizing: border-box;
+    padding: 0 0 11px 0;
+    width: 80%;
+    box-shadow: 0px 0px 28px #040604;
+    border-radius: 50px;
+    border-bottom: 6px solid #ef2c2c;
+}
+}
