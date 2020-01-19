@@ -36,6 +36,7 @@
           alt=""
         />
       </header>
+      <section>
       <div id="hitsList">
         <h1>Songs List</h1>
         <div id="listOfSongs">
@@ -57,7 +58,10 @@
         </div>
       </div>
     </div>
-
+</section>
+<footer>
+  <p>Created by Tamrat Bayeh</p>
+</footer>
     <script>
       let lyricsObj,
         artist = document.getElementById("Artist"),
@@ -115,10 +119,12 @@
           if (this.readyState === this.DONE) {
             let songObj = JSON.parse(this.responseText).data;
             console.log(songObj);
-            artistImage.src =songObj[1].artist. picture_medium;
+            artistImage.src =songObj[1].artist. picture_big;
 
            
-            document.getElementById("song").innerHTML = `<h3>${songObj[1].title}</h3> <audio controls autoplay loop>
+            document.getElementById("song").innerHTML = `<h3>${songObj[1].title}</h3> 
+            <h2> Album:${songObj[1].album.title}</h2> 
+            <audio controls autoplay loop>
                     <source src=${
                       songObj[1].preview
                     } type="audio/mp3">
